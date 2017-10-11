@@ -1,9 +1,18 @@
-<select id="searchEngineMenu">
+ <select id="searchEngineMenu" onchange="newDoc()">
 
   <!-- I would like to select Google,Bing,or Yahoo and redirect to that page -->
 
-  <option value="google"><a href="www.google.com">Google</option>
-  <option value="bing"><a href="www.bing.com">Bing</option>
-  <option value="yahoo"><a href="www.yahoo.com">Yahoo</option>
+  <option id = "Google" selected href="https://www.google.com" value="google">Google</option>
+  <option id = "Bing" href="https://www.bing.com"  value="bing" >Bing</option>
+  <option id = "Yahoo" href="https://www.yahoo.com" value="yahoo">Yahoo</option>
 
 </select>
+
+<script>
+function newDoc() {
+  var x = document.getElementById('searchEngineMenu');
+  var getHref = x.options[x.selectedIndex].getAttribute('href');
+  //window.location.assign(getHref);
+  console.log(getHref)
+}
+</script>
